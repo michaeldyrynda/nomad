@@ -8,6 +8,7 @@ if (! function_exists('app')) {
         if (is_null($abstract)) {
             return Container::getInstance();
         }
+
         return Container::getInstance()->make($abstract, $parameters);
     }
 }
@@ -21,6 +22,7 @@ if (! function_exists('config')) {
         if (is_array($key)) {
             return app('config')->set($key);
         }
+
         return app('config')->get($key, $default);
     }
 }
