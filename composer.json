@@ -19,6 +19,7 @@
         "illuminate/events": "5.5.*",
         "illuminate/filesystem": "5.5.*",
         "laravel-zero/foundation": "5.5.*",
+        "symfony/process": "^4.0",
         "vlucas/phpdotenv": "^2.4"
     },
     "autoload": {
