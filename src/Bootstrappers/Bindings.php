@@ -20,7 +20,7 @@ class Bindings extends Bootstrapper
 
         $this->container->instance('config', new Repository);
 
-        $this->container->instance('path', $this->container->basePath().DIRECTORY_SEPARATOR.'app');
+        $this->container->instance('path', $this->container->basePath().DIRECTORY_SEPARATOR.'src');
 
         $this->container->instance('path.storage', $this->container->basePath().DIRECTORY_SEPARATOR.'storage');
     }
