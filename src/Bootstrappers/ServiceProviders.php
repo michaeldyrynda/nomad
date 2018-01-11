@@ -4,8 +4,6 @@ namespace Dyrynda\Nomad\Bootstrappers;
 
 use Illuminate\Events\EventServiceProvider;
 use Dyrynda\Nomad\Providers\DatabaseProvider;
-use Illuminate\Database\DatabaseServiceProvider;
-use Illuminate\Database\MigrationServiceProvider;
 use Illuminate\Filesystem\FilesystemServiceProvider;
 
 class ServiceProviders extends Bootstrapper

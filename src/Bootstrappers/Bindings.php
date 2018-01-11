@@ -4,7 +4,6 @@ namespace Dyrynda\Nomad\Bootstrappers;
 
 use Illuminate\Config\Repository;
 use Illuminate\Container\Container;
-use Dyrynda\Nomad\Bootstrappers\Bootstrapper;
 
 class Bindings extends Bootstrapper
 {
