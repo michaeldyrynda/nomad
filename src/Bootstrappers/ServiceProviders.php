@@ -2,19 +2,22 @@
 
 namespace Dyrynda\Nomad\Bootstrappers;
 
+use Illuminate\Events\EventServiceProvider;
+use Dyrynda\Nomad\Providers\DatabaseProvider;
+use Illuminate\Database\DatabaseServiceProvider;
+use Illuminate\Database\MigrationServiceProvider;
+use Illuminate\Filesystem\FilesystemServiceProvider;
+
 class ServiceProviders extends Bootstrapper
 {
     protected $providers = [
-        //
-    ];
-
-    protected $components = [
-        //
+        EventServiceProvider::class,
+        FilesystemServiceProvider::class,
+        DatabaseProvider::class,
     ];
 
     protected $aliases = [
         'app' => [\Illuminate\Contracts\Container\Container::class],
-        'events' => [\Illuminate\Events\Dispatcher::class, \Illuminate\Contracts\Events\Dispatcher::class],
         'config' => [\Illuminate\Config\Repository::class, \Illuminate\Contracts\Config\Repository::class],
         'cache' => [\Illuminate\Cache\CacheManager::class, \Illuminate\Contracts\Cache\Factory::class],
         'cache.store' => [\Illuminate\Cache\Repository::class, \Illuminate\Contracts\Cache\Repository::class],
@@ -23,15 +26,13 @@ class ServiceProviders extends Bootstrapper
     public function bootstrap()
     {
         $this->registerProviders();
+
         $this->registerAliases();
     }
 
     private function registerProviders()
     {
         collect($this->providers)
-            ->merge(collect($this->components)->filter(function ($component) {
-                return (new $component($this->application))->isAvailable();
-            })->toArray())
             ->merge($this->container->make('config')->get('app.providers'))
             ->each(function ($serviceProvider) {
                 $this->call($serviceProvider, 'register');
