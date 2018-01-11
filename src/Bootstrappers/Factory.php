@@ -11,7 +11,7 @@ class Factory
         Bindings::class,
         Configurations::class,
         ServiceProviders::class,
-        Commands::class,
+        Facades::class,
     ];
 
     public function make()
