@@ -1,2 +1,3 @@
 /vendor
+/database/database.sqlite
 composer.lock
