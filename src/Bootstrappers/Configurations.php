@@ -18,7 +18,7 @@ class Configurations extends Bootstrapper
 
         $this->application->setName($config->get('app.name', 'Nomad'));
 
-        $this->application->setVersion($config->get('app.version', '1.0.0'));
+        $this->application->setVersion($config->get('app.version', '1.0.1'));
     }
 
     protected function locateConfigs()
