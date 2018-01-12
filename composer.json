@@ -30,11 +30,6 @@
             "src/helpers.php"
         ]
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
     "bin": ["nomad"],
     "config": {
         "preferred-install": "dist",
