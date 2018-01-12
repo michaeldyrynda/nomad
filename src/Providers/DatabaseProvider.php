@@ -8,12 +8,17 @@ use Illuminate\Database\MigrationServiceProvider;
 
 class DatabaseProvider extends ServiceProvider
 {
-    public function register()
+    public function boot()
     {
         if (file_exists($configPath = config_path('database.php'))) {
-            $this->mergeConfigFrom($configPath, 'database');
-        }
+            $config = $this->app->make('config');
 
+            $config->set('database', array_merge($config->get('database'), require $configPath));
+        }
+    }
+
+    public function register()
+    {
         $this->registerDatabaseService();
 
         $this->registerMigrationService();
@@ -21,11 +26,10 @@ class DatabaseProvider extends ServiceProvider
 
     protected function registerDatabaseService()
     {
-        $instance = new DatabaseServiceProvider($this->app);
-        $instance->register();
-        $instance->boot();
-
+        $this->app->alias('db', \Illuminate\Database\DatabaseManager::class);
         $this->app->alias('db', \Illuminate\Database\ConnectionResolverInterface::class);
+        $this->app->alias('db.connection', \Illuminate\Database\DatabaseManager::class);
+        $this->app->alias('db.connection', \Illuminate\Database\ConnectionInterface::class);
 
         $this->app->make(\Illuminate\Database\Capsule\Manager::class)->setAsGlobal();
 
@@ -47,8 +51,6 @@ class DatabaseProvider extends ServiceProvider
     {
         $config = $this->app->make('config');
         $config->set('database.migrations', $config->get('database.migrations', 'migrations'));
-
-        (new MigrationServiceProvider($this->app))->register();
 
         $this->app->alias(
             'migration.repository',
