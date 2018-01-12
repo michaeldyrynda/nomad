@@ -3,8 +3,6 @@
 namespace Dyrynda\Nomad\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Database\DatabaseServiceProvider;
-use Illuminate\Database\MigrationServiceProvider;
 
 class DatabaseProvider extends ServiceProvider
 {
