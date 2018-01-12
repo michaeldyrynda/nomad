@@ -7,15 +7,8 @@ use Dyrynda\Nomad\Providers\DatabaseProvider;
 use Illuminate\Filesystem\FilesystemServiceProvider;
 use Dyrynda\Nomad\Providers\ExceptionServiceProvider;
 
-class ServiceProviders extends Bootstrapper
+class RegisterProviders extends ProviderBootstrapper
 {
-    protected $providers = [
-        ExceptionServiceProvider::class,
-        EventServiceProvider::class,
-        FilesystemServiceProvider::class,
-        DatabaseProvider::class,
-    ];
-
     protected $aliases = [
         'app' => [\Illuminate\Contracts\Container\Container::class],
         'config' => [\Illuminate\Config\Repository::class, \Illuminate\Contracts\Config\Repository::class],
@@ -36,9 +29,6 @@ class ServiceProviders extends Bootstrapper
             ->merge($this->container->make('config')->get('app.providers'))
             ->each(function ($serviceProvider) {
                 $this->call($serviceProvider, 'register');
-            })
-            ->each(function ($serviceProvider) {
-                $this->call($serviceProvider, 'boot');
             });
     }
 
@@ -48,15 +38,6 @@ class ServiceProviders extends Bootstrapper
             foreach ($aliases as $alias) {
                 $this->container->alias($key, $alias);
             }
-        }
-    }
-
-    private function call($providerClass, $method)
-    {
-        $provider = new $providerClass($this->container);
-
-        if (method_exists($provider, $method)) {
-            $this->container->call([$provider, $method]);
         }
     }
 }

@@ -10,9 +10,10 @@ class Factory
         EnvironmentVariables::class,
         Bindings::class,
         Configurations::class,
-        ServiceProviders::class,
+        RegisterProviders::class,
         Facades::class,
         HandleExceptions::class,
+        BootProviders::class,
     ];
 
     public function make()
