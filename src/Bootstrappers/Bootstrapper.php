@@ -2,8 +2,8 @@
 
 namespace Dyrynda\Nomad\Bootstrappers;
 
-use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Console\Application;
+use Illuminate\Contracts\Container\Container;
 
 abstract class Bootstrapper
 {
