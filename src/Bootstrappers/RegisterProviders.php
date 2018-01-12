@@ -2,11 +2,6 @@
 
 namespace Dyrynda\Nomad\Bootstrappers;
 
-use Illuminate\Events\EventServiceProvider;
-use Dyrynda\Nomad\Providers\DatabaseProvider;
-use Illuminate\Filesystem\FilesystemServiceProvider;
-use Dyrynda\Nomad\Providers\ExceptionServiceProvider;
-
 class RegisterProviders extends ProviderBootstrapper
 {
     protected $aliases = [
