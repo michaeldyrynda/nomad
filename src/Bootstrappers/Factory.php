@@ -3,7 +3,6 @@
 namespace Dyrynda\Nomad\Bootstrappers;
 
 use Dyrynda\Nomad\Application;
-use Dyrynda\Nomad\Bootstrappers\HandleExceptions;
 
 class Factory
 {
