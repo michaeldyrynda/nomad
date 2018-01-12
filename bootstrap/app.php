@@ -8,6 +8,6 @@ if (! defined('BASE_PATH')) {
     }
 }
 
-require dirname(__DIR__).'/vendor/autoload.php';
+require BASE_PATH.'/vendor/autoload.php';
 
 return new Dyrynda\Nomad\Application;
