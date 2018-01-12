@@ -25,10 +25,7 @@ class DatabaseProvider extends ServiceProvider
         $instance->register();
         $instance->boot();
 
-        $this->app->alias('db', \Illuminate\Database\DatabaseManager::class);
         $this->app->alias('db', \Illuminate\Database\ConnectionResolverInterface::class);
-        $this->app->alias('db.connection', \Illuminate\Database\DatabaseManager::class);
-        $this->app->alias('db.connection', \Illuminate\Database\ConnectionInterface::class);
 
         $this->app->make(\Illuminate\Database\Capsule\Manager::class)->setAsGlobal();
 
