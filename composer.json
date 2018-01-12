@@ -2,7 +2,8 @@
     "name": "dyrynda/nomad",
     "description": "Laravel-style database migrations wherever they may roam",
     "type": "library",
-    "homepage": "https://michaeldyrynda.github.io/nomad",
+    "homepage": "https://github.com/michaeldyrynda/nomad",
+    "license": "MIT",
     "authors": [
         {
             "name": "Michael Dyrynda",
