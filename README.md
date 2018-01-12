@@ -1,6 +1,4 @@
-<p align="center">
-    <h1>Nomad</h1>
-</p>
+# Nomad
 
 ## About Nomad
 
