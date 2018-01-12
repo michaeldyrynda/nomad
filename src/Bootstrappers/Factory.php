@@ -3,6 +3,7 @@
 namespace Dyrynda\Nomad\Bootstrappers;
 
 use Dyrynda\Nomad\Application;
+use Dyrynda\Nomad\Bootstrappers\HandleExceptions;
 
 class Factory
 {
@@ -12,6 +13,7 @@ class Factory
         Configurations::class,
         ServiceProviders::class,
         Facades::class,
+        HandleExceptions::class,
     ];
 
     public function make()

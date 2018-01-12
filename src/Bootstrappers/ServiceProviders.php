@@ -5,10 +5,12 @@ namespace Dyrynda\Nomad\Bootstrappers;
 use Illuminate\Events\EventServiceProvider;
 use Dyrynda\Nomad\Providers\DatabaseProvider;
 use Illuminate\Filesystem\FilesystemServiceProvider;
+use Dyrynda\Nomad\Providers\ExceptionServiceProvider;
 
 class ServiceProviders extends Bootstrapper
 {
     protected $providers = [
+        ExceptionServiceProvider::class,
         EventServiceProvider::class,
         FilesystemServiceProvider::class,
         DatabaseProvider::class,
