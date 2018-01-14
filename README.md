@@ -10,6 +10,16 @@ This is particularly useful where you have multiple applications accessing a sin
 
 Nomad is built as a utility to support another repository. Learn more about this [here](https://github.com/michaeldyrynda/vagabond).
 
+Should you choose to use the Nomad library directly, first install it using [Composer](https://getcomposer.org).
+
+```
+composer require dyrynda/nomad
+```
+
+A sample configuration file is provided in `config/database.php`, which you can change as needed for your database environment.
+
+You may then run the `nomad` application and access the available commands.
+
 ## Usage
 
 For information on the available commands and their functions, be sure to check out Laravel's [migration documentation](https://laravel.com/docs/5.5/migrations).
