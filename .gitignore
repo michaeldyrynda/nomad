@@ -1,4 +1,3 @@
 /vendor
-/database
-/config
+/database/migrations
 composer.lock
