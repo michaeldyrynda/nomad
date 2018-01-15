@@ -3,6 +3,8 @@
 namespace Dyrynda\Nomad;
 
 use Composer\Script\Event;
+use RecursiveIteratorIterator;
+use RecursiveDirectoryIterator;
 
 class ComposerScripts
 {
