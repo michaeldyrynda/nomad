@@ -6,6 +6,8 @@ use Symfony\Component\Finder\Finder;
 
 class Configurations extends Bootstrapper
 {
+    const VERSION = '1.0.4';
+
     public function bootstrap()
     {
         $config = $this->container->make('config');
@@ -18,7 +20,7 @@ class Configurations extends Bootstrapper
 
         $this->application->setName($config->get('app.name', 'Nomad'));
 
-        $this->application->setVersion($config->get('app.version', '1.0.1'));
+        $this->application->setVersion(static::VERSION);
     }
 
     protected function locateConfigs()
