@@ -3,7 +3,6 @@
 namespace Dyrynda\Nomad;
 
 use Composer\Script\Event;
-use Composer\Installer\PackageEvent;
 
 class ComposerScripts
 {
