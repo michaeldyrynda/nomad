@@ -31,6 +31,9 @@
             "src/helpers.php"
         ]
     },
+    "scripts": [
+        "Dyrynda\\Nomad\\ComposerScripts::preAuotoloadDump"
+    ],
     "bin": ["nomad"],
     "config": {
         "preferred-install": "dist",
