@@ -15,8 +15,6 @@ class Bindings extends Bootstrapper
 
         $this->container->instance(Container::class, $this->container);
 
-        $this->container->instance(ApplicationContract::class, $this->application);
-
         $this->container->instance('config', new Repository);
 
         $this->container->instance('path', $this->container->basePath().DIRECTORY_SEPARATOR.'src');
