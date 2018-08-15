@@ -20,5 +20,7 @@ class Bindings extends Bootstrapper
         $this->container->instance('path', $this->container->basePath().DIRECTORY_SEPARATOR.'src');
 
         $this->container->instance('path.storage', $this->container->basePath().DIRECTORY_SEPARATOR.'storage');
+
+        $this->container->instance('path.config', $this->container->basePath().DIRECTORY_SEPARATOR.'config');
     }
 }
