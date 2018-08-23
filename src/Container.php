@@ -92,7 +92,7 @@ class Container extends BaseContainer implements LaravelApplication
      */
     public function environment()
     {
-        return config('app.production') ? 'production' : 'development';
+        return config('app.environment') ? 'production' : 'development';
     }
 
     /**
@@ -101,6 +101,14 @@ class Container extends BaseContainer implements LaravelApplication
     public function runningInConsole()
     {
         return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function runningUnitTests()
+    {
+        return config('app.environment') == 'testing';
     }
 
     /**
