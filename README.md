@@ -2,7 +2,7 @@
 
 ## About Nomad
 
-Nomad gives you the power of Laravel's [database migrations](https://laravel.com/docs/5.5/migrations) without the need for a full Laravel installation.
+Nomad gives you the power of Laravel's [database migrations](https://laravel.com/docs/5.8/migrations) without the need for a full Laravel installation.
 
 This is particularly useful where you have multiple applications accessing a single database, but you aren't sure which should be responsible for managing the database schema. By extracting your migrations to a separate repository, you can maintain full version control over your database schema, without worrying about different applications trying to run the migrations on the same database.
 
