@@ -2,6 +2,7 @@
 
 namespace Dyrynda\Nomad;
 
+use Closure;
 use RuntimeException;
 use Dyrynda\Nomad\Exceptions\ConsoleException;
 use Illuminate\Container\Container as BaseContainer;
@@ -90,7 +91,7 @@ class Container extends BaseContainer implements LaravelApplication
     /**
      * {@inheritdoc}
      */
-    public function environment()
+    public function environment(...$environments)
     {
         return config('app.environment') ? 'production' : 'development';
     }
@@ -310,5 +311,117 @@ class Container extends BaseContainer implements LaravelApplication
     public function getMonologConfigurator()
     {
         return $this->monologConfigurator;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function bootstrapPath($path = '')
+    {
+        throw new NotImplementedException;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function resolveProvider($provider)
+    {
+        throw new NotImplementedException;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function bootstrapWith(array $bootstrappers)
+    {
+        throw new NotImplementedException;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function detectEnvironment(Closure $callback)
+    {
+        throw new NotImplementedException;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCachedConfigPath()
+    {
+        throw new NotImplementedException;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCachedRoutesPath()
+    {
+        throw new NotImplementedException;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getLocale()
+    {
+        throw new NotImplementedException;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getProviders($provider)
+    {
+        throw new NotImplementedException;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function hasBeenBootstrapped()
+    {
+        throw new NotImplementedException;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function loadDeferredProviders()
+    {
+        throw new NotImplementedException;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function routesAreCached()
+    {
+        throw new NotImplementedException;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setLocale($locale)
+    {
+        throw new NotImplementedException;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function shouldSkipMiddleware()
+    {
+        throw new NotImplementedException;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function terminate()
+    {
+        throw new NotImplementedException;
     }
 }
