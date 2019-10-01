@@ -314,7 +314,7 @@ class Container extends BaseContainer implements LaravelApplication
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function bootstrapPath($path = '')
     {
@@ -322,7 +322,7 @@ class Container extends BaseContainer implements LaravelApplication
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function resolveProvider($provider)
     {
@@ -330,7 +330,7 @@ class Container extends BaseContainer implements LaravelApplication
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function bootstrapWith(array $bootstrappers)
     {
@@ -338,7 +338,7 @@ class Container extends BaseContainer implements LaravelApplication
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function detectEnvironment(Closure $callback)
     {
@@ -346,7 +346,7 @@ class Container extends BaseContainer implements LaravelApplication
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCachedConfigPath()
     {
@@ -354,7 +354,7 @@ class Container extends BaseContainer implements LaravelApplication
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCachedRoutesPath()
     {
@@ -362,7 +362,7 @@ class Container extends BaseContainer implements LaravelApplication
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getLocale()
     {
@@ -370,7 +370,7 @@ class Container extends BaseContainer implements LaravelApplication
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getProviders($provider)
     {
@@ -378,7 +378,7 @@ class Container extends BaseContainer implements LaravelApplication
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function hasBeenBootstrapped()
     {
@@ -386,7 +386,7 @@ class Container extends BaseContainer implements LaravelApplication
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function loadDeferredProviders()
     {
@@ -394,7 +394,7 @@ class Container extends BaseContainer implements LaravelApplication
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function routesAreCached()
     {
@@ -402,7 +402,7 @@ class Container extends BaseContainer implements LaravelApplication
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setLocale($locale)
     {
@@ -410,7 +410,7 @@ class Container extends BaseContainer implements LaravelApplication
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function shouldSkipMiddleware()
     {
@@ -418,7 +418,7 @@ class Container extends BaseContainer implements LaravelApplication
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function terminate()
     {
