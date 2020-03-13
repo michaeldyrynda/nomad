@@ -6,7 +6,7 @@ use Symfony\Component\Finder\Finder;
 
 class Configurations extends Bootstrapper
 {
-    const VERSION = '1.0.5';
+    const VERSION = '2.0.0';
 
     public function bootstrap()
     {
