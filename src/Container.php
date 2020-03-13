@@ -3,12 +3,12 @@
 namespace Dyrynda\Nomad;
 
 use Closure;
-use RuntimeException;
 use Dyrynda\Nomad\Exceptions\ConsoleException;
-use Illuminate\Container\Container as BaseContainer;
 use Dyrynda\Nomad\Exceptions\NotImplementedException;
-use Symfony\Component\Console\Exception\CommandNotFoundException;
+use Illuminate\Container\Container as BaseContainer;
 use Illuminate\Contracts\Foundation\Application as LaravelApplication;
+use RuntimeException;
+use Symfony\Component\Console\Exception\CommandNotFoundException;
 
 class Container extends BaseContainer implements LaravelApplication
 {

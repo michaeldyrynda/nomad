@@ -2,10 +2,10 @@
 
 namespace Dyrynda\Nomad\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Contracts\Foundation\Application;
 use Dyrynda\Nomad\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Contracts\Debug\ExceptionHandler as ExceptionHandlerContract;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
 
 class ExceptionServiceProvider extends ServiceProvider
 {

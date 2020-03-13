@@ -2,13 +2,13 @@
 
 namespace Dyrynda\Nomad;
 
-use Illuminate\Events\Dispatcher;
 use Dyrynda\Nomad\Bootstrappers\Factory;
-use Illuminate\Support\Traits\CapsuleManagerTrait;
 use Illuminate\Console\Application as BaseApplication;
-use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
-use Illuminate\Contracts\Container\Container as ContainerContract;
 use Illuminate\Contracts\Console\Application as ApplicationContract;
+use Illuminate\Contracts\Container\Container as ContainerContract;
+use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
+use Illuminate\Events\Dispatcher;
+use Illuminate\Support\Traits\CapsuleManagerTrait;
 
 class Application extends BaseApplication implements ApplicationContract
 {
