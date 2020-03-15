@@ -69,6 +69,7 @@ class DatabaseProvider extends ServiceProvider
             \Illuminate\Database\Console\Migrations\ResetCommand::class,
             \Illuminate\Database\Console\Migrations\RollbackCommand::class,
             \Illuminate\Database\Console\Migrations\StatusCommand::class,
+            \Illuminate\Database\Console\WipeCommand::class,
         ]);
     }
 }
