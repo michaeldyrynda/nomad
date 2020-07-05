@@ -2,10 +2,22 @@
 
 namespace Dyrynda\Nomad\Providers;
 
+use Illuminate\Database\Migrations\MigrationCreator;
 use Illuminate\Support\ServiceProvider;
 
 class DatabaseProvider extends ServiceProvider
 {
+    protected $commands = [
+        'Migrate' => 'command.migrate',
+        'MigrateFresh' => 'command.migrate.fresh',
+        'MigrateInstall' => 'command.migrate.install',
+        'MigrateRefresh' => 'command.migrate.refresh',
+        'MigrateReset' => 'command.migrate.reset',
+        'MigrateRollback' => 'command.migrate.rollback',
+        'MigrateStatus' => 'command.migrate.status',
+        'MigrateMake' => 'command.migrate.make',
+    ];
+
     public function boot()
     {
         if (file_exists($configPath = config_path('database.php'))) {
@@ -50,26 +62,13 @@ class DatabaseProvider extends ServiceProvider
         $config = $this->app->make('config');
         $config->set('database.migrations', $config->get('database.migrations', 'migrations'));
 
+        $this->app->singleton('migration.creator', function ($app) {
+            return new MigrationCreator($app['files'], $app->basePath('stubs'));
+        });
+
         $this->app->alias(
             'migration.repository',
             \Illuminate\Database\Migrations\MigrationRepositoryInterface::class
         );
-
-        if ($this->app->environment() !== 'production') {
-            $this->commands([
-                \Illuminate\Database\Console\Migrations\MigrateMakeCommand::class,
-            ]);
-        }
-
-        $this->commands([
-            \Illuminate\Database\Console\Migrations\FreshCommand::class,
-            \Illuminate\Database\Console\Migrations\InstallCommand::class,
-            \Illuminate\Database\Console\Migrations\MigrateCommand::class,
-            \Illuminate\Database\Console\Migrations\RefreshCommand::class,
-            \Illuminate\Database\Console\Migrations\ResetCommand::class,
-            \Illuminate\Database\Console\Migrations\RollbackCommand::class,
-            \Illuminate\Database\Console\Migrations\StatusCommand::class,
-            \Illuminate\Database\Console\WipeCommand::class,
-        ]);
     }
 }
