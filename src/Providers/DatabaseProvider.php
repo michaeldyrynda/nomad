@@ -7,17 +7,6 @@ use Illuminate\Support\ServiceProvider;
 
 class DatabaseProvider extends ServiceProvider
 {
-    protected $commands = [
-        'Migrate' => 'command.migrate',
-        'MigrateFresh' => 'command.migrate.fresh',
-        'MigrateInstall' => 'command.migrate.install',
-        'MigrateRefresh' => 'command.migrate.refresh',
-        'MigrateReset' => 'command.migrate.reset',
-        'MigrateRollback' => 'command.migrate.rollback',
-        'MigrateStatus' => 'command.migrate.status',
-        'MigrateMake' => 'command.migrate.make',
-    ];
-
     public function boot()
     {
         if (file_exists($configPath = config_path('database.php'))) {
@@ -44,11 +33,16 @@ class DatabaseProvider extends ServiceProvider
         $this->app->make(\Illuminate\Database\Capsule\Manager::class)->setAsGlobal();
 
         if ($this->app->environment() !== 'production') {
-            $this->commands([\Illuminate\Database\Console\Seeds\SeederMakeCommand::class]);
+            $this->commands([
+                \Illuminate\Database\Console\WipeCommand::class,
+            ]);
         }
 
         if (is_dir(database_path('seeds'))) {
-            $this->commands([\Illuminate\Database\Console\Seeds\SeedCommand::class]);
+            $this->commands([
+                \Illuminate\Database\Console\Seeds\SeedCommand::class,
+                \Illuminate\Database\Console\Seeds\SeederMakeCommand::class,
+            ]);
 
             collect($this->app->make('files')->files(database_path('seeds')))
                 ->each(function ($file) {
